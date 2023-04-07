@@ -11,7 +11,11 @@ import Foundation
 class CaptureTimeViewModel : ObservableObject
 {
     
-    @Published var timeCaptureArray: [CaptureTime]?
+    @Published var timeCaptureArray: [CaptureTime]
+    
+    init() {
+        self.timeCaptureArray = []
+    }
     
     /**
      Updates the `timeCaptureArray` property by appending a new `CaptureTime` object with the current date.
@@ -20,15 +24,9 @@ class CaptureTimeViewModel : ObservableObject
      */
     
     func updateCapture() {
-        guard var capturesArray = self.timeCaptureArray else {
-            let captureTime = CaptureTime(time: Date())
-            self.timeCaptureArray = [captureTime]
-            return
-        }
-        
+
         let captureTime = CaptureTime(time: Date())
-        capturesArray.append(captureTime)
-        self.timeCaptureArray = capturesArray
+        self.timeCaptureArray.append(captureTime)
     }
     
     

@@ -14,6 +14,7 @@ struct CardView: View {
     let btnAction: () -> Void
     var color: Color
     
+
     // MARK: - View
     var body: some View {
         
