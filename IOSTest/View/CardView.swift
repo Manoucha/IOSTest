@@ -13,6 +13,14 @@ struct CardView: View {
     @ObservedObject var captureViewModel: CaptureTimeViewModel = CaptureTimeViewModel.shared
     var color: Color
     
+    //Constants
+    let cardWidth: CGFloat = 220
+    let cardHeight: CGFloat = 220
+    let cardCornerRadius: CGFloat = 16
+    let cardShadowRadius: CGFloat = 10
+    let trailingPadding: CGFloat = 20
+    let topPadding: CGFloat = 20
+    
     // MARK: - View
     var body: some View {
         
@@ -35,12 +43,12 @@ struct CardView: View {
             }
             .padding(.horizontal)
         }
-        .frame(width: 220, height: 220)
+        .frame(width: cardWidth, height: cardHeight)
         .background(self.color)
-        .cornerRadius(16)
-        .shadow(radius: 10)
-        .padding(.trailing, 20)
-        .padding(.top, 20)
+        .cornerRadius(cardCornerRadius)
+        .shadow(radius: cardShadowRadius)
+        .padding(.trailing, trailingPadding)
+        .padding(.top, topPadding)
         
     }
 }
@@ -48,11 +56,6 @@ struct CardView: View {
 // MARK: - Preview
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        let captureTimeArray: [CaptureTime] = [
-            CaptureTime(time: Date()),
-            CaptureTime(time: Date().addingTimeInterval(60)),
-            CaptureTime(time: Date().addingTimeInterval(120))
-        ]
         CardView(color: Color.green)
     }
 }

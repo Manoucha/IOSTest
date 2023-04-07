@@ -9,7 +9,12 @@ import SwiftUI
 
 struct PopupView: View {
     
-   
+    // MARK: - Properties
+    
+    //Constants
+    let cardPadding: CGFloat = 10
+    let cardOpacity = 0.8
+    
     // MARK: - View
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .trailing, vertical: .top))
@@ -17,14 +22,14 @@ struct PopupView: View {
             Rectangle ()
                 .foregroundColor(Color.orange)
                 .scaledToFit()
-                .opacity(0.8)
-                .padding(10)
+                .opacity(cardOpacity)
+                .padding(cardPadding)
             CardView(color: Color.orange)
             
         }
     }
 }
-    // MARK: - Preview
+// MARK: - Preview
 struct PopupView_Previews: PreviewProvider {
     static var previews: some View {
         PopupView()

@@ -11,8 +11,10 @@ struct MainView: View {
     
     // MARK: - Properties
     @State var menuOpen: Bool = false
-
     
+    //Constants
+    let vstackPadding: CGFloat = 20
+
     
     // MARK: - View
     var body: some View {
@@ -23,23 +25,19 @@ struct MainView: View {
             /// The cardView displaying the captured times
             CardView(color: Color.green)
             
-            // Adds a popup view for capturing time
+            /// Adds a popup view for capturing time
             VStack {
                 Spacer()
                 PopupView()
-                    .padding(.trailing, 20)
-                    .padding(.leading, 20)
+                    .padding(vstackPadding)
                 
             }
-            
-            // Adds a side menu
+            /// Adds a side menu
             MenuView(
                 isOpen: self.menuOpen,
                 menuClose: {self.menuOpen.toggle()})
         }
-        
 
-        
     }
     // MARK: - Preview
     struct MainView_Previews: PreviewProvider {

@@ -14,6 +14,12 @@ struct MenuView: View {
     let menuClose: () -> Void
     @GestureState private var dragOffset = CGSize.zero
     
+    // Constants
+    let backgroundOpacity = 0.3
+    let menuWidthRatio = 0.6
+    let menuPadding = 5.0
+    let menuAnimationDelay = 0.25
+    let swipeThreshold = 100.0
     
     // MARK: - View
     var body: some View {
@@ -21,26 +27,24 @@ struct MenuView: View {
             GeometryReader { _ in
                 EmptyView()
             }
-            .background(Color.gray.opacity(0.3))
+            .background(Color.gray.opacity(backgroundOpacity))
             .opacity(self.isOpen ? 1.0 : 0.0)
-            .animation(Animation.easeIn.delay(0.25))
+            .animation(Animation.easeIn.delay(menuAnimationDelay))
             .onTapGesture {
                 self.menuClose()
             }
-            
             HStack {
                 GeometryReader { geometry in
                     VStack {
                         CardView(color: Color.blue)
                         
-                        
                     }
-                        .padding(.all, 5)
+                    .padding(.all, 5)
                     
                 }
-                .frame(width: UIScreen.main.bounds.width * 0.6)
+                .frame(width: UIScreen.main.bounds.width * menuWidthRatio)
                 .background(Color.blue)
-                .offset(x: self.isOpen ? self.dragOffset.width : -UIScreen.main.bounds.width * 0.6)
+                .offset(x: self.isOpen ? self.dragOffset.width : -UIScreen.main.bounds.width * menuWidthRatio)
                 .animation(.default)
                 
                 Spacer()
@@ -51,8 +55,8 @@ struct MenuView: View {
                 state = value.translation
             })
                 .onEnded({ value in
-                    if value.translation.width > 100 {
-                        self.menuClose()
+                    if value.translation.width > swipeThreshold {
+                        
                     }
                 })
         )
@@ -62,7 +66,6 @@ struct MenuView: View {
 // MARK: - Preview
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        let captureViewModel = CaptureTimeViewModel()
         MenuView(isOpen: true, menuClose: {})
     }
 }
