@@ -10,8 +10,6 @@ import SwiftUI
 struct MenuView: View {
     
     // MARK: - Properties
-    
-    @ObservedObject var captureViewModel: CaptureTimeViewModel
     let isOpen: Bool
     let menuClose: () -> Void
     @GestureState private var dragOffset = CGSize.zero
@@ -33,7 +31,7 @@ struct MenuView: View {
             HStack {
                 GeometryReader { geometry in
                     VStack {
-                        CardView(captureTimeArray: captureViewModel.timeCaptureArray, btnAction: captureViewModel.updateCapture, color: Color.blue)
+                        CardView(color: Color.blue)
                         
                         
                     }
@@ -65,7 +63,7 @@ struct MenuView: View {
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
         let captureViewModel = CaptureTimeViewModel()
-        MenuView(captureViewModel: captureViewModel, isOpen: true, menuClose: {})
+        MenuView(isOpen: true, menuClose: {})
     }
 }
 

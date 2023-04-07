@@ -11,8 +11,8 @@ import SwiftUI
 struct IOSTestApp: App {
     var body: some Scene {
         WindowGroup {
-            let captureViewModel = CaptureTimeViewModel()
-            MainView(captureViewModel: captureViewModel)
+            MainView()
+                
         }
     }
 }

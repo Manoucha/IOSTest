@@ -9,9 +9,7 @@ import SwiftUI
 
 struct PopupView: View {
     
-    // MARK: - Properties
-    @ObservedObject var captureViewModel: CaptureTimeViewModel
-    
+   
     // MARK: - View
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .trailing, vertical: .top))
@@ -21,7 +19,7 @@ struct PopupView: View {
                 .scaledToFit()
                 .opacity(0.8)
                 .padding(10)
-            CardView(captureTimeArray: captureViewModel.timeCaptureArray, btnAction: captureViewModel.updateCapture, color: Color.orange)
+            CardView(color: Color.orange)
             
         }
     }
@@ -29,7 +27,6 @@ struct PopupView: View {
     // MARK: - Preview
 struct PopupView_Previews: PreviewProvider {
     static var previews: some View {
-        let captureViewModel = CaptureTimeViewModel()
-        PopupView(captureViewModel: captureViewModel)
+        PopupView()
     }
 }

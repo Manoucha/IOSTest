@@ -6,11 +6,10 @@
 //
 
 import Foundation
- 
 
 class CaptureTimeViewModel : ObservableObject
 {
-    
+    static let shared = CaptureTimeViewModel()
     @Published var timeCaptureArray: [CaptureTime]
     
     init() {

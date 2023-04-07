@@ -10,8 +10,8 @@ import SwiftUI
 struct MainView: View {
     
     // MARK: - Properties
-    @ObservedObject var captureViewModel: CaptureTimeViewModel
     @State var menuOpen: Bool = false
+
     
     
     // MARK: - View
@@ -21,12 +21,12 @@ struct MainView: View {
             Color.green.edgesIgnoringSafeArea(.all)
             
             /// The cardView displaying the captured times
-            CardView(captureTimeArray: captureViewModel.timeCaptureArray, btnAction: captureViewModel.updateCapture, color: Color.green)
+            CardView(color: Color.green)
             
             // Adds a popup view for capturing time
             VStack {
                 Spacer()
-                PopupView(captureViewModel: captureViewModel)
+                PopupView()
                     .padding(.trailing, 20)
                     .padding(.leading, 20)
                 
@@ -34,19 +34,17 @@ struct MainView: View {
             
             // Adds a side menu
             MenuView(
-                captureViewModel: captureViewModel,
                 isOpen: self.menuOpen,
                 menuClose: {self.menuOpen.toggle()})
         }
         
-        
+
         
     }
     // MARK: - Preview
     struct MainView_Previews: PreviewProvider {
         static var previews: some View {
-            let captureViewModel = CaptureTimeViewModel()
-            MainView(captureViewModel: captureViewModel)
+            MainView()
         }
     }
 }
