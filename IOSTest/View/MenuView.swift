@@ -33,13 +33,12 @@ struct MenuView: View {
             HStack {
                 GeometryReader { geometry in
                     VStack {
-                        CardView(captureTimeArray: captureViewModel.timeCaptureArray ?? [], btnAction: captureViewModel.updateCapture)
+                        CardView(captureTimeArray: captureViewModel.timeCaptureArray ?? [], btnAction: captureViewModel.updateCapture, color: Color.blue)
                         
                         
                     } .padding()
                     
                 }
-                
                 .frame(width: UIScreen.main.bounds.width * 0.6)
                 .background(Color.blue)
                 .offset(x: self.isOpen ? self.dragOffset.width : -UIScreen.main.bounds.width * 0.6)

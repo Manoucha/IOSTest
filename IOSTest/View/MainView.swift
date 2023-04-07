@@ -21,7 +21,7 @@ struct MainView: View {
             Color.green.edgesIgnoringSafeArea(.all)
             
             /// The cardView displaying the captured times
-            CardView(captureTimeArray: captureViewModel.timeCaptureArray ?? [], btnAction: captureViewModel.updateCapture)
+            CardView(captureTimeArray: captureViewModel.timeCaptureArray ?? [], btnAction: captureViewModel.updateCapture, color: Color.green)
             
             // Adds a popup view for capturing time
             VStack {

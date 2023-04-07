@@ -14,10 +14,11 @@ import Foundation
 struct CaptureTime : Identifiable {
     let id = UUID()
     var time: Date
+    let formatDate = "yyyy-MM-dd'T'HH:mm:ss"
     
     func formattedDate() -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        dateFormatter.dateFormat = self.formatDate
         return dateFormatter.string(from: self.time)
     }
 }

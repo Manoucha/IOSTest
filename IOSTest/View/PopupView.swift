@@ -20,7 +20,8 @@ struct PopupView: View {
                 .foregroundColor(Color.orange)
                 .scaledToFit()
                 .opacity(0.8)
-            CardView(captureTimeArray: captureViewModel.timeCaptureArray ?? [], btnAction: captureViewModel.updateCapture)
+                .padding(10)
+            CardView(captureTimeArray: captureViewModel.timeCaptureArray ?? [], btnAction: captureViewModel.updateCapture, color: Color.orange)
             
         }
     }

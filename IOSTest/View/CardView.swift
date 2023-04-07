@@ -12,7 +12,7 @@ struct CardView: View {
     // MARK: - Properties
     let captureTimeArray: [CaptureTime]
     let btnAction: () -> Void
-    
+    var color: Color
     
     // MARK: - View
     var body: some View {
@@ -25,17 +25,19 @@ struct CardView: View {
                 print(captureTimeArray.count)
             }
             .padding()
-            
+            .tint(Color.white)
+        
             ScrollView {
                 // scroll view content
                 ForEach(captureTimeArray) { capture in
                     Text(capture.formattedDate())
+                        .foregroundColor(Color.white)
                 }
             }
             .padding(.horizontal)
         }
-        .frame(width: 200, height: 220)
-        .background(Color.white)
+        .frame(width: 220, height: 220)
+        .background(self.color)
         .cornerRadius(16)
         .shadow(radius: 10)
         .padding(.trailing, 20)
@@ -52,6 +54,6 @@ struct CardView_Previews: PreviewProvider {
             CaptureTime(time: Date().addingTimeInterval(60)),
             CaptureTime(time: Date().addingTimeInterval(120))
         ]
-        CardView(captureTimeArray: captureTimeArray, btnAction: { print(" I am clicked in test")})
+        CardView(captureTimeArray: captureTimeArray, btnAction: { print(" I am clicked in test")}, color: Color.green)
     }
 }
