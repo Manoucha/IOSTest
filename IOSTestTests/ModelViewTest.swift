@@ -24,11 +24,10 @@ final class ModelViewTest: XCTestCase {
         let viewModel = CaptureTimeViewModel()
         viewModel.updateCapture()
 
-        XCTAssertEqual(viewModel.timeCaptureArray?.count, 1)
+        XCTAssertEqual(viewModel.timeCaptureArray.count, 1)
 
-        let captureTime = viewModel.timeCaptureArray?.first
+        let captureTime = viewModel.timeCaptureArray.first
         XCTAssertNotNil(captureTime)
-        XCTAssertNotNil(captureTime?.time)
     }
 
 

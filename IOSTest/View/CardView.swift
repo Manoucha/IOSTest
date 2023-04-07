@@ -33,6 +33,7 @@ struct CardView: View {
             }
             .padding()
             .tint(Color.white)
+            .accessibilityIdentifier("captureTimeButton")
             
             ScrollView {
                 // scroll view content
