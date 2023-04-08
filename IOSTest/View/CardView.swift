@@ -26,14 +26,18 @@ struct CardView: View {
         
         VStack {
             
-            Button("Button") {
-                // button action
+            
+            Button(action: {
+                // action
                 CaptureTimeViewModel.shared.updateCapture()
-                
+            })
+            {
+                Text(NSLocalizedString("button.title", comment: ""))
             }
+            
+            .accessibilityIdentifier("cardViewButton")
             .padding()
             .tint(Color.white)
-            .accessibilityIdentifier("captureTimeButton")
             
             ScrollView {
                 // scroll view content
@@ -43,6 +47,7 @@ struct CardView: View {
                 }
             }
             .padding(.horizontal)
+            .accessibilityIdentifier("capturedTime")
         }
         .frame(width: cardWidth, height: cardHeight)
         .background(self.color)
@@ -50,6 +55,8 @@ struct CardView: View {
         .shadow(radius: cardShadowRadius)
         .padding(.trailing, trailingPadding)
         .padding(.top, topPadding)
+        .accessibilityIdentifier("cardView")
+        
         
     }
 }

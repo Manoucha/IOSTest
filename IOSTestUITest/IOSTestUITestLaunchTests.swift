@@ -1,13 +1,13 @@
 //
-//  IOSTestUITestsLaunchTests.swift
-//  IOSTestUITests
+//  IOSTestUITestLaunchTests.swift
+//  IOSTestUITest
 //
-//  Created by macbook on 5/4/2023.
+//  Created by macbook on 8/4/2023.
 //
 
 import XCTest
 
-final class IOSTestUITestsLaunchTests: XCTestCase {
+final class IOSTestUITestLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  IOSTest
+
+  Created by macbook on 8/4/2023.
+  
+*/
+
+
+
+// French
+"button.title" = "Cliquez ici";
+
+// English
+"button.title" = "Click Here";

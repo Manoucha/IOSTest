@@ -23,9 +23,7 @@ final class ModelViewTest: XCTestCase {
     func testUpdateCapture() {
         let viewModel = CaptureTimeViewModel()
         viewModel.updateCapture()
-
         XCTAssertEqual(viewModel.timeCaptureArray.count, 1)
-
         let captureTime = viewModel.timeCaptureArray.first
         XCTAssertNotNil(captureTime)
     }

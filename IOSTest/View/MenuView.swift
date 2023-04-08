@@ -57,11 +57,13 @@ struct MenuView: View {
             })
                 .onEnded({ value in
                     if value.translation.width > swipeThreshold {
-                        
+                        self.menuClose()
                     }
                 })
         )
         .accessibilityIdentifier("menuView")
+        
+        
 
     }
 }
