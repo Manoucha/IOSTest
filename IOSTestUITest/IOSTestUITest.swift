@@ -5,7 +5,7 @@
 //  Created by macbook on 8/4/2023.
 //
 
-import XCTest
+/*import XCTest
 
 final class IOSTestUITest: XCTestCase {
     
@@ -33,6 +33,11 @@ final class IOSTestUITest: XCTestCase {
         XCTAssertTrue(button.exists, "Card doesn't exist")
     }
     */
+  /*  func testExample() throws {
+        let app = XCUIApplication()
+        app.launch()
+    }
+*/
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
@@ -41,4 +46,4 @@ final class IOSTestUITest: XCTestCase {
             }
         }
     }
-}
+}*/

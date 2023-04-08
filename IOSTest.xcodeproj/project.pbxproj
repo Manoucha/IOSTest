@@ -31,9 +31,11 @@
 		FA24ECBE29DDCEDB00BC4B12 /* PopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24ECBD29DDCEDB00BC4B12 /* PopupView.swift */; };
 		FAB9E8D429E1906400E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
 		FAB9E8D629E1906400E68010 /* IOSTestUITestLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D529E1906400E68010 /* IOSTestUITestLaunchTests.swift */; };
-		FAB9E8DF29E1A16C00E68010 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0AA84B29DFB02700C2B015 /* XCTest.framework */; platformFilter = ios; };
-		FAB9E8E029E1A16D00E68010 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0AA84B29DFB02700C2B015 /* XCTest.framework */; platformFilter = ios; };
 		FAB9E8E629E1AA6600E68010 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAB9E8E829E1AA6600E68010 /* Localizable.strings */; };
+		FAB9E8EA29E1D32300E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
+		FAB9E8EB29E1D32400E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
+		FAB9E8EC29E1D32400E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
+		FAB9E8F529E1FDA300E68010 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8F429E1FDA300E68010 /* Notification.Name.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +123,7 @@
 		FAB9E8D529E1906400E68010 /* IOSTestUITestLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSTestUITestLaunchTests.swift; sourceTree = "<group>"; };
 		FAB9E8E729E1AA6600E68010 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FAB9E8E929E1AA6E00E68010 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FAB9E8F429E1FDA300E68010 /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +145,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB9E8DF29E1A16C00E68010 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +152,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB9E8E029E1A16D00E68010 /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +191,7 @@
 		FA24EC8829DDC05600BC4B12 /* IOSTest */ = {
 			isa = PBXGroup;
 			children = (
+				FAB9E8F129E1FC2800E68010 /* Utilities */,
 				FAB9E8E129E1A3D400E68010 /* Supporting files */,
 				FA0462C829DE88CB00C4CBDC /* Info.plist */,
 				FA24ECB629DDC42A00BC4B12 /* ViewModel */,
@@ -260,6 +262,14 @@
 				FAB9E8E829E1AA6600E68010 /* Localizable.strings */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		FAB9E8F129E1FC2800E68010 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FAB9E8F429E1FDA300E68010 /* Notification.Name.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +445,8 @@
 				FA0462C329DE502400C4CBDC /* CaptureTimeViewModel.swift in Sources */,
 				FA24ECBA29DDCB2400BC4B12 /* CardView.swift in Sources */,
 				FA24ECB829DDC49B00BC4B12 /* TimeCapture.swift in Sources */,
+				FAB9E8EA29E1D32300E68010 /* IOSTestUITest.swift in Sources */,
+				FAB9E8F529E1FDA300E68010 /* Notification.Name.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +461,7 @@
 				FA0AA83829DFA55000C2B015 /* TimeCapture.swift in Sources */,
 				FA0AA83629DF955E00C2B015 /* CaptureTimeViewModel.swift in Sources */,
 				FA0AA83929DFA6BA00C2B015 /* ModelViewTest.swift in Sources */,
+				FAB9E8EB29E1D32400E68010 /* IOSTestUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +475,7 @@
 				FA0AA84929DFAA9A00C2B015 /* PopupView.swift in Sources */,
 				FA0AA83729DFA54A00C2B015 /* TimeCapture.swift in Sources */,
 				FA0AA83529DF940000C2B015 /* CaptureTimeViewModel.swift in Sources */,
+				FAB9E8EC29E1D32400E68010 /* IOSTestUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

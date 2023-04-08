@@ -10,8 +10,9 @@ import SwiftUI
 struct CardView: View {
     
     // MARK: - Properties
-    @ObservedObject var captureViewModel: CaptureTimeViewModel = CaptureTimeViewModel.shared
     var color: Color
+    @ObservedObject var viewModel = CaptureTimeViewModel.shared
+    
     
     //Constants
     let cardWidth: CGFloat = 220
@@ -29,7 +30,8 @@ struct CardView: View {
             
             Button(action: {
                 // action
-                CaptureTimeViewModel.shared.updateCapture()
+                NotificationCenter.default.post(name: .buttonTappedNotification, object: nil)
+                
             })
             {
                 Text(NSLocalizedString("button.title", comment: ""))
@@ -41,7 +43,7 @@ struct CardView: View {
             
             ScrollView {
                 // scroll view content
-                ForEach(CaptureTimeViewModel.shared.timeCaptureArray) { capture in
+                ForEach(viewModel.timeCaptureArray) { capture in
                     Text(capture.formattedDate())
                         .foregroundColor(Color.white)
                 }

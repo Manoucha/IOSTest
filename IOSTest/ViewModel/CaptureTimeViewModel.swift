@@ -12,10 +12,17 @@ class CaptureTimeViewModel : ObservableObject
     /// Singleton pattern
     static let shared = CaptureTimeViewModel()
     
+    @Published var notificationReceived = false
     @Published var timeCaptureArray: [CaptureTime]
     
     init() {
         self.timeCaptureArray = []
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification), name: Notification.Name("buttonTappedNotification"), object: nil)
+
+    }
+    @objc func handleNotification() {
+        notificationReceived = true
+        updateCapture()
     }
     
     /**
@@ -28,7 +35,9 @@ class CaptureTimeViewModel : ObservableObject
 
         let captureTime = CaptureTime(time: Date())
         self.timeCaptureArray.append(captureTime)
+        
     }
+    
     
     
 }
