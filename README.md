@@ -71,10 +71,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]]
+<img src=images/cap2.png width="300" height="600">
 
- This project is an Ios mobile application developed with Swift. The app contains 3 views (green, blue and orange) where each view contains a button and a scroll view.
- When a button is clicked, the 3 scroll views got updated with the current timestamp.
+ This project is an IOS mobile application developed with Swift 5. The app contains 3 Views (green MainView, blue Slide out menu and orange PopUp) where each view contains a button and a scroll view.
+ When a button is clicked, the 3 VcrollViews got updated with the current timestamp.
  This application was developed as part of a technical interview for an IOS developer position.
  Feel free to check the code and let me know if you have suggestion, comment, question ;)
 
