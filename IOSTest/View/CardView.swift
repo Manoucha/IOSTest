@@ -29,12 +29,12 @@ struct CardView: View {
                 // action
                 NotificationCenter.default.post(name: .buttonTappedNotification, object: nil)
             })
-            .accessibilityIdentifier("myButtonCardView")
             {
                 Text(NSLocalizedString("button.title", comment: ""))
             }
             .padding()
             .tint(Color.white)
+            .accessibilityIdentifier("myButtonCardView")
             
             ScrollView {
                 // scroll view content

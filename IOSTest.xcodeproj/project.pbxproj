@@ -26,7 +26,6 @@
 		FAB9E8D429E1906400E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
 		FAB9E8D629E1906400E68010 /* IOSTestUITestLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D529E1906400E68010 /* IOSTestUITestLaunchTests.swift */; };
 		FAB9E8E629E1AA6600E68010 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAB9E8E829E1AA6600E68010 /* Localizable.strings */; };
-		FAB9E8EA29E1D32300E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
 		FAB9E8EB29E1D32400E68010 /* IOSTestUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8D329E1906400E68010 /* IOSTestUITest.swift */; };
 		FAB9E8F529E1FDA300E68010 /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB9E8F429E1FDA300E68010 /* Notification.Name.swift */; };
 /* End PBXBuildFile section */
@@ -382,7 +381,6 @@
 				FA0462C329DE502400C4CBDC /* CaptureTimeViewModel.swift in Sources */,
 				FA24ECBA29DDCB2400BC4B12 /* CardView.swift in Sources */,
 				FA24ECB829DDC49B00BC4B12 /* TimeCapture.swift in Sources */,
-				FAB9E8EA29E1D32300E68010 /* IOSTestUITest.swift in Sources */,
 				FAB9E8F529E1FDA300E68010 /* Notification.Name.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,6 +474,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -537,6 +536,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTING_SEARCH_PATHS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

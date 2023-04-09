@@ -25,19 +25,19 @@ final class IOSTestUITest: XCTestCase {
         let app = XCUIApplication()
         app.launch()
         
-        let button = app.buttons["myButtonCardView"]
+        
+        let buttonsQuery = app.buttons.matching(identifier: "myButtonCardView")
+        let button = buttonsQuery.element(boundBy: 0)
         print(app.debugDescription)
         XCTAssertTrue(button.exists)
         
         // Get the initial count of myCaptureText elements in the ScrollView
         let myscrollView = app.scrollViews["myScrollViewCardView"]
-        let initialCount = app.staticTexts.matching(identifier: "myCaptureText").count
+        XCTAssertTrue(myscrollView.waitForExistence(timeout: 9))
         
         // Tap the button that triggers the update of the array
         button.tap()
         print(app.debugDescription)
-        
-        XCTAssertTrue(myscrollView.waitForExistence(timeout: 9))
         
         // Get the updated count of myCaptureText elements in the ScrollView
         let updatedCount = app.staticTexts.matching(identifier: "myCaptureText").count
@@ -47,14 +47,15 @@ final class IOSTestUITest: XCTestCase {
     }
     
     /// Test to measure the time it takes to update the scrollView after button click
-
+    
     func testMesureTimeToUpdateScrollView () throws {
         
         let app = XCUIApplication()
         app.launch()
         
         // Find and tap the button that updates the scroll view
-        let button = app.buttons["myButtonCardView"]
+        let buttonsQuery = app.buttons.matching(identifier: "myButtonCardView")
+        let button = buttonsQuery.element(boundBy: 0)
         print(app.debugDescription)
         XCTAssertTrue(button.exists)
         button.tap()
