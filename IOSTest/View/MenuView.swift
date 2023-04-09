@@ -37,10 +37,11 @@ struct MenuView: View {
                 GeometryReader { geometry in
                     VStack {
                         CardView(color: Color.blue)
-                            .accessibilityIdentifier("menuCardView")
-                        
+                           
+                       
                     }
                     .padding(.all, 5)
+                    .accessibilityIdentifier("cardViewMenu")
                     
                 }
                 .frame(width: UIScreen.main.bounds.width * menuWidthRatio)
@@ -49,6 +50,7 @@ struct MenuView: View {
                 .animation(.default)
                 
                 Spacer()
+                
             }
         }
         .gesture(DragGesture()

@@ -1,13 +1,13 @@
 //
-//  IOSTestUITest.swift
-//  IOSTestUITest
+//  AppUITests.swift
+//  IOSTest
 //
-//  Created by macbook on 8/4/2023.
+//  Created by macbook on 9/4/2023.
 //
 
 import XCTest
 
-final class IOSTestUITest: XCTestCase {
+final class AppUITests: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,17 +22,34 @@ final class IOSTestUITest: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-  /*  func testExample() throws {
+    func testExample() throws {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
         app.launch()
         
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        sleep(2)
-        let button = app.otherElements["mainCardView"]
-        XCTAssertTrue(button.exists, "Card doesn't exist")
+        let button = app.buttons["myButtonCardView"]
+        print(app.debugDescription)
+        XCTAssertTrue(button.exists)
+        
+        // Get the initial count of myCaptureText elements in the ScrollView
+        let myscrollView = app.scrollViews["myScrollViewCardView"]
+        let initialCount = app.staticTexts.matching(identifier: "myCaptureText").count
+        
+        
+        // Tap the button that triggers the update of the array
+        app.buttons["myButtonCardView"].tap()
+        print(app.debugDescription)
+        
+        XCTAssertTrue(myscrollView.waitForExistence(timeout: 9))
+        
+        // Get the updated count of myCaptureText elements in the ScrollView
+        let updatedCount = app.staticTexts.matching(identifier: "myCaptureText").count
+        
+        // Assert that the updated count is greater than the initial count
+        XCTAssertEqual(updatedCount, 3)
+        
     }
-    */
+    
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.

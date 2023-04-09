@@ -24,21 +24,21 @@ struct MainView: View {
             
             /// The cardView displaying the captured times
             CardView(color: Color.green)
-                .accessibilityIdentifier("mainCardView")
             
             /// Adds a popup view for capturing time
             VStack {
                 Spacer()
                 PopupView()
                     .padding(vstackPadding)
-                    
+                
                 
             }
+            
+         
             /// Adds a side menu
             MenuView(
                 isOpen: self.menuOpen,
                 menuClose: {self.menuOpen.toggle()})
-           
         }
 
     }

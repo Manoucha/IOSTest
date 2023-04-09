@@ -28,26 +28,36 @@ struct CardView: View {
             
             
             Button(action: {
+                
+                print("Button tapped")
+                  print("Initial array count: \(CaptureTimeViewModel.shared.timeCaptureArray.count)")
+                
                 // action
                 CaptureTimeViewModel.shared.updateCapture()
             })
             {
                 Text(NSLocalizedString("button.title", comment: ""))
+                    
             }
             
-            .accessibilityIdentifier("cardViewButton")
             .padding()
             .tint(Color.white)
-            
+            .accessibilityIdentifier("myButtonCardView")
+
             ScrollView {
                 // scroll view content
+                
                 ForEach(CaptureTimeViewModel.shared.timeCaptureArray) { capture in
                     Text(capture.formattedDate())
                         .foregroundColor(Color.white)
-                }
+                        .accessibilityIdentifier("myCaptureText")
+                } 
             }
             .padding(.horizontal)
-            .accessibilityIdentifier("capturedTime")
+            .accessibilityIdentifier("myScrollViewCardView")
+
+            
+          
         }
         .frame(width: cardWidth, height: cardHeight)
         .background(self.color)
@@ -55,7 +65,6 @@ struct CardView: View {
         .shadow(radius: cardShadowRadius)
         .padding(.trailing, trailingPadding)
         .padding(.top, topPadding)
-        .accessibilityIdentifier("cardView")
         
         
     }
