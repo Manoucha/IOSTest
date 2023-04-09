@@ -24,7 +24,6 @@ struct CardView: View {
     
     // MARK: - View
     var body: some View {
-        
         VStack {
             Button(action: {
                 // action
