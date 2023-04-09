@@ -47,7 +47,7 @@ final class AppUITests: XCTestCase {
     }
     
     /// Test to measure the time it takes to update the scrollView after button click
-    ///
+
     func testMesureTimeToUpdateScrollView () throws {
         
         let app = XCUIApplication()
