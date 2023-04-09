@@ -89,6 +89,10 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+Swift 5 -- 
+IOS 16.2 --
+XCode 14.2
+
 
 
 <!-- GETTING STARTED -->
