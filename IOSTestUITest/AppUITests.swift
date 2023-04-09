@@ -22,7 +22,7 @@ final class AppUITests: XCTestCase {
     
     func testScrollViewUpdatedWhenButtonClicked() throws {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication() 
+        let app = XCUIApplication()
         app.launch()
         
         let button = app.buttons["myButtonCardView"]
@@ -45,7 +45,38 @@ final class AppUITests: XCTestCase {
         // Assert that the updated count is equal to 3 as I have 3 cardViews in my App
         XCTAssertEqual(updatedCount, 3)
     }
-
+    
+    /// Test to measure the time it takes to update the scrollView after button click
+    ///
+    func testMesureTimeToUpdateScrollView () throws {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        // Find and tap the button that updates the scroll view
+        let button = app.buttons["myButtonCardView"]
+        print(app.debugDescription)
+        XCTAssertTrue(button.exists)
+        button.tap()
+        
+        // Measure the time it takes to update the scroll view
+        let start = Date()
+        
+        // Find the updated scroll view
+        let updatedScrollView = app.scrollViews["myScrollViewCardView"]
+        
+        // Wait for the updated scroll view to be visible
+        XCTAssertTrue(updatedScrollView.waitForExistence(timeout: 5))
+        
+        // Find the text element in the updated scroll view
+        let myCaptureText = app.staticTexts.matching(identifier: "myCaptureText").element
+        // Wait for the text element to be visible
+        XCTAssertTrue(myCaptureText.waitForExistence(timeout: 5))
+        
+        let end = Date()
+        let timeInterval = end.timeIntervalSince(start)
+        print("Time to update scroll view: \(timeInterval)")
+    }
     func testLaunchPerformance() throws {
         if #available(iOS 16.0, *) {
             // This measures how long it takes to launch your application.
