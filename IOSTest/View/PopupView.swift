@@ -24,9 +24,7 @@ struct PopupView: View {
                 .scaledToFit()
                 .opacity(cardOpacity)
                 .padding(cardPadding)
-            CardView(color: Color.orange)
-                .accessibilityIdentifier("menuCardView")
-            
+            CardView(color: Color.orange)            
         }
     }
 }

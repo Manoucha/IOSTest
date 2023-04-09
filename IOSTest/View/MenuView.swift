@@ -36,9 +36,7 @@ struct MenuView: View {
             HStack {
                 GeometryReader { geometry in
                     VStack {
-                        CardView(color: Color.blue)
-                            .accessibilityIdentifier("menuCardView")
-                        
+                        CardView(color: Color.blue)                        
                     }
                     .padding(.all, 5)
                     

@@ -26,18 +26,14 @@ struct CardView: View {
     var body: some View {
         
         VStack {
-            
-            
             Button(action: {
                 // action
                 NotificationCenter.default.post(name: .buttonTappedNotification, object: nil)
-                
             })
+            .accessibilityIdentifier("myButtonCardView")
             {
                 Text(NSLocalizedString("button.title", comment: ""))
             }
-            
-            .accessibilityIdentifier("cardViewButton")
             .padding()
             .tint(Color.white)
             
@@ -46,19 +42,19 @@ struct CardView: View {
                 ForEach(viewModel.timeCaptureArray) { capture in
                     Text(capture.formattedDate())
                         .foregroundColor(Color.white)
+                        .accessibilityIdentifier("myCaptureText")
                 }
             }
             .padding(.horizontal)
-            .accessibilityIdentifier("capturedTime")
+            .accessibilityIdentifier("myScrollViewCardView")
+
         }
         .frame(width: cardWidth, height: cardHeight)
         .background(self.color)
         .cornerRadius(cardCornerRadius)
         .shadow(radius: cardShadowRadius)
         .padding(.trailing, trailingPadding)
-        .padding(.top, topPadding)
-        .accessibilityIdentifier("cardView")
-        
+        .padding(.top, topPadding)        
         
     }
 }
