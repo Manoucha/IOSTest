@@ -26,7 +26,6 @@ struct PopupView: View {
                 .padding(cardPadding)
             CardView(color: Color.orange)
                 .accessibilityIdentifier("menuCardView")
-            
         }
     }
 }

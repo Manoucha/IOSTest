@@ -17,13 +17,9 @@ class CaptureTimeViewModel : ObservableObject
     init() {
         self.timeCaptureArray = []
     }
-    
     /**
      Updates the `timeCaptureArray` property by appending a new `CaptureTime` object with the current date.
-     
-     If `timeCaptureArray` is nil, the method initializes it with a new `CaptureTime` object.
-     */
-    
+    */
     func updateCapture() {
 
         let captureTime = CaptureTime(time: Date())

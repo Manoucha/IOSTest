@@ -37,8 +37,7 @@ struct MenuView: View {
                 GeometryReader { geometry in
                     VStack {
                         CardView(color: Color.blue)
-                           
-                       
+
                     }
                     .padding(.all, 5)
                     .accessibilityIdentifier("cardViewMenu")
@@ -50,7 +49,6 @@ struct MenuView: View {
                 .animation(.default)
                 
                 Spacer()
-                
             }
         }
         .gesture(DragGesture()
@@ -64,9 +62,6 @@ struct MenuView: View {
                 })
         )
         .accessibilityIdentifier("menuView")
-        
-        
-
     }
 }
 
