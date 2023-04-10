@@ -8,8 +8,5 @@
 
 
 
-// French
-"button.title" = "Cliquez ici";
-
 // English
-"button.title" = "Click Here";
+"button.title" = "Capture time";

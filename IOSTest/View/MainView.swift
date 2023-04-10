@@ -35,7 +35,6 @@ struct MainView: View {
             MenuView(
                 isOpen: self.menuOpen,
                 menuClose: {self.menuOpen.toggle()})
-
         }
 
     }

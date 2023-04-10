@@ -59,10 +59,6 @@ struct MenuView: View {
                     }
                 })
         )
-        .accessibilityIdentifier("menuView")
-        
-        
-
     }
 }
 
