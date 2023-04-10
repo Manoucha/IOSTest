@@ -28,7 +28,7 @@ struct CardView: View {
             
             Button(action: {
                 // action
-                CaptureTimeViewModel.shared.updateCapture()
+                captureViewModel.updateCapture()
             })
             {
                 Text(NSLocalizedString("button.title", comment: ""))
@@ -39,8 +39,7 @@ struct CardView: View {
 
             ScrollView {
                 // scroll view content
-                
-                ForEach(CaptureTimeViewModel.shared.timeCaptureArray) { capture in
+                ForEach(captureViewModel.timeCaptureArray) { capture in
                     Text(capture.formattedDate())
                         .foregroundColor(Color.white)
                         .accessibilityIdentifier("myCaptureText")

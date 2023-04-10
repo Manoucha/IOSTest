@@ -30,7 +30,6 @@ struct MainView: View {
                 Spacer()
                 PopupView()
                     .padding(vstackPadding)
-
             }
 
             /// Adds a side menu
