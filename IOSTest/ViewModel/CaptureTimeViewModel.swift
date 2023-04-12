@@ -16,11 +16,10 @@ class CaptureTimeViewModel : ObservableObject
     
     init() {
         self.timeCaptureArray = []
-        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification), name: Notification.Name("buttonTappedNotification"), object: nil)
-
     }
-    @objc func handleNotification() {
-        updateCapture()
+    
+    func buttonTapped() {
+        NotificationCenter.default.post(name: Notification.Name("buttonTappedNotification"), object: nil)
     }
     
     /**
@@ -32,5 +31,6 @@ class CaptureTimeViewModel : ObservableObject
         self.timeCaptureArray.append(captureTime)
         
     }
+
     
 }

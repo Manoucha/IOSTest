@@ -27,7 +27,7 @@ struct CardView: View {
         VStack {
             Button(action: {
                 // action
-                NotificationCenter.default.post(name: .buttonTappedNotification, object: nil)
+                viewModel.buttonTapped()
             })
             {
                 Text(NSLocalizedString("button.title", comment: ""))
@@ -53,7 +53,8 @@ struct CardView: View {
         .cornerRadius(cardCornerRadius)
         .shadow(radius: cardShadowRadius)
         .padding(.trailing, trailingPadding)
-        .padding(.top, topPadding)        
+        .padding(.top, topPadding)
+
         
     }
 }
