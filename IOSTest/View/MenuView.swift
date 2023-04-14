@@ -14,6 +14,9 @@ struct MenuView: View {
     let menuClose: () -> Void
     @GestureState private var dragOffset = CGSize.zero
     
+    @ObservedObject var viewModel: CaptureTimeViewModel
+
+    
     // Constants
     let backgroundOpacity = 0.3
     let menuWidthRatio = 0.6
@@ -36,7 +39,7 @@ struct MenuView: View {
             HStack {
                 GeometryReader { geometry in
                     VStack {
-                        CardView(color: Color.blue)                        
+                        CardView(color: Color.blue, viewModel: viewModel)                        
                     }
                     .padding(.all, 5)
                     
@@ -65,7 +68,8 @@ struct MenuView: View {
 // MARK: - Preview
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView(isOpen: true, menuClose: {})
+        var viewModel = CaptureTimeViewModel()
+        MenuView(isOpen: true, menuClose: {}, viewModel: viewModel)
     }
 }
 

@@ -11,8 +11,7 @@ struct CardView: View {
     
     // MARK: - Properties
     var color: Color
-    @ObservedObject var viewModel = CaptureTimeViewModel.shared
-    
+    @ObservedObject var viewModel: CaptureTimeViewModel
     
     //Constants
     let cardWidth: CGFloat = 220
@@ -62,6 +61,7 @@ struct CardView: View {
 // MARK: - Preview
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(color: Color.green)
+         var viewModel = CaptureTimeViewModel()
+        CardView(color: Color.green, viewModel: viewModel)
     }
 }

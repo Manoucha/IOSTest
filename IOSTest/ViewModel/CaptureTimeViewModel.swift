@@ -10,7 +10,7 @@ import Foundation
 class CaptureTimeViewModel : ObservableObject
 {
     /// Singleton pattern
-    static let shared = CaptureTimeViewModel()
+   // static let shared = CaptureTimeViewModel()
     
     @Published var timeCaptureArray: [CaptureTime]
     

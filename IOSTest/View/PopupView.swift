@@ -10,6 +10,8 @@ import SwiftUI
 struct PopupView: View {
     
     // MARK: - Properties
+    @ObservedObject var viewModel: CaptureTimeViewModel
+
     
     //Constants
     let cardPadding: CGFloat = 10
@@ -24,13 +26,14 @@ struct PopupView: View {
                 .scaledToFit()
                 .opacity(cardOpacity)
                 .padding(cardPadding)
-            CardView(color: Color.orange)            
+            CardView(color: Color.orange, viewModel: viewModel)            
         }
     }
 }
 // MARK: - Preview
 struct PopupView_Previews: PreviewProvider {
     static var previews: some View {
-        PopupView()
+        var viewModel = CaptureTimeViewModel()
+        PopupView(viewModel: viewModel)
     }
 }

@@ -11,7 +11,7 @@ struct MainView: View {
     
     // MARK: - Properties
     @State var menuOpen: Bool = false
-    @ObservedObject var viewModel = CaptureTimeViewModel.shared
+    @ObservedObject var viewModel = CaptureTimeViewModel()
     
     //Constants
     let vstackPadding: CGFloat = 20
@@ -24,19 +24,20 @@ struct MainView: View {
             Color.green.edgesIgnoringSafeArea(.all)
             
             /// The cardView displaying the captured times
-            CardView(color: Color.green)
+            CardView(color: Color.green, viewModel: viewModel)
             
             
             /// Adds a popup view for capturing time
             VStack {
                 Spacer()
-                PopupView()
+                PopupView(viewModel: viewModel)
                     .padding(vstackPadding)
             }
             /// Adds a side menu
             MenuView(
                 isOpen: self.menuOpen,
-                menuClose: {self.menuOpen.toggle()})
+                menuClose: {self.menuOpen.toggle()},
+                viewModel: viewModel)
             
         }.onReceive(NotificationCenter.default.publisher(for: Notification.Name("buttonTappedNotification"))) { _ in
             
